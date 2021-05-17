@@ -50,6 +50,13 @@ public class MyLinkedList implements INode{
         myNode.setNext(newNode);
     }
 
+    //delete first element in linkedlist
+    public INode pop() {
+        INode  tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
     @Override
     public Object getKey() {
         return null;
