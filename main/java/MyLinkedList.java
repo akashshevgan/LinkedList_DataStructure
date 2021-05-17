@@ -77,6 +77,27 @@ public class MyLinkedList implements INode{
         System.out.println(" Element is = " +tempNode.getKey());
     }
 
+    public void delete(INode deleteNode) {
+        INode tempNode1 = head;
+        while (tempNode1.getNext() != deleteNode) {
+            tempNode1 = tempNode1.getNext();
+        }
+        INode tempNode2 = tempNode1;
+        tempNode1 = tempNode1.getNext();
+        tempNode1 = tempNode1.getNext();
+        tempNode2.setNext(tempNode1);
+    }
+
+    public void size(INode head) {
+        int count = 0;
+        INode node = head;
+        while (node != null) {
+            count++;
+            node = node.getNext();
+        }
+        System.out.println("Size : " + count);
+    }
+
     @Override
     public Object getKey() {
         return null;
