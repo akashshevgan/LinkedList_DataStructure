@@ -45,6 +45,11 @@ public class MyLinkedList implements INode{
         }
     }
 
+    public void insert(INode myNode, INode newNode) {
+        this.head.setNext(myNode);
+        myNode.setNext(newNode);
+    }
+
     @Override
     public Object getKey() {
         return null;
