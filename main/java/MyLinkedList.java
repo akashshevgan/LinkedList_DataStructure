@@ -57,6 +57,16 @@ public class MyLinkedList implements INode{
         return tempNode;
     }
 
+    public INode popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = null;
+        return tempNode;
+    }
+
     @Override
     public Object getKey() {
         return null;
