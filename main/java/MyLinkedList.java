@@ -19,6 +19,7 @@ public class MyLinkedList implements INode{
             this.head.setNext(tempNode);
         }
     }
+
 //print linked list
     public void printMyNodes(){
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
