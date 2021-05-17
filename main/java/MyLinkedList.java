@@ -67,6 +67,15 @@ public class MyLinkedList implements INode{
         return tempNode;
     }
 
+    public void search(INode myNode){   //  search given element
+        INode tempNode = head;
+        while (tempNode.getNext()!=myNode){
+            tempNode=tempNode.getNext();
+        }
+        tempNode = tempNode.getNext();
+        System.out.println(" Element is = " +tempNode.getKey());
+    }
+
     @Override
     public Object getKey() {
         return null;
@@ -74,7 +83,6 @@ public class MyLinkedList implements INode{
 
     @Override
     public void setKey(Object key) {
-
     }
 
     @Override
