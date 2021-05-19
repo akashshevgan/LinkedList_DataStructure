@@ -46,6 +46,18 @@ public class LinkedHashMap<K, V> {
     }
 
     public String toString() {
-        return "LinkedHashMap List{" + myBucketArray + "}";
+        return "MyLinkedHashMap List{" + myBucketArray + "}";
+    }
+
+    public V remove(K key) {
+        int index = getBucketIndex(key);
+        MyLinkedList myLinkedList = myBucketArray.get(index);
+        MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) myLinkedList.searchKey((Comparable) key);
+        if (myMapNode != null) {
+            V deletedValue = myMapNode.getValue();
+            myLinkedList.delete((Comparable) key);
+            return deletedValue;
+        } else
+            return null;
     }
 }
