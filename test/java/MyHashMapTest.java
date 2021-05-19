@@ -21,6 +21,5 @@ public class MyHashMapTest {
         int frequency = myHashMap.get("to");
         System.out.println(myHashMap);
         Assertions.assertEquals(2,frequency);
-
     }
 }
