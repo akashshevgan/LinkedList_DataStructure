@@ -1,4 +1,4 @@
-public class MyLinkedList implements INode{
+public class MyLinkedList<K extends Comparable>{
 
     public INode head;
     public INode tail;
@@ -98,21 +98,23 @@ public class MyLinkedList implements INode{
         System.out.println("Size : " + count);
     }
 
-    @Override
-    public Object getKey() {
-        return null;
-    }
-
-    @Override
-    public void setKey(Object key) {
-    }
-
-    @Override
-    public INode getNext() {
-        return null;
-    }
-
-    @Override
-    public void setNext(INode next) {
+    public void sortedLinkedList(INode<K> newNode) {
+        INode tempNode = head;
+        INode prevNode = null;
+        while (tempNode != null && (newNode.getKey()).compareTo((K) tempNode.getKey()) > 0) {
+            prevNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        if (prevNode == null) {
+            this.head = newNode;
+        } else {
+            prevNode.setNext(newNode);
+        }
+        newNode.setNext(tempNode);
+        tempNode =head;
+        while (tempNode!=null){
+            this.tail=tempNode;
+            tempNode=tempNode.getNext();
+        }
     }
 }
